@@ -30,6 +30,7 @@
   box-sizing: border-box;
   color: #000;
   position: relative;
+  top:100px
   /* top: 80px; Removed to fix alignment */
 }
 
