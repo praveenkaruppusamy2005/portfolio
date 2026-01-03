@@ -1,3 +1,4 @@
+
 .projects {
   width: 100vw;
   height: 100vh;
@@ -102,9 +103,9 @@
 }
 
 .project-card {
-  width: 90vw; /* Increased width significantly */
+  width: 90vw;
   height: 65vh;
-  max-width: none; /* Removed max-width constraint */
+  max-width: 1200px;
   background: transparent;
   padding: 0;
   border-radius: 15px;
@@ -113,8 +114,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 0 auto; /* This should be enough for centering if container is flex */
-  /* Removed absolute positioning which might cause off-center issues if container width varies */
+  margin: 0 auto;
 }
 
 .project-card h3 {
@@ -162,4 +162,122 @@
 @keyframes bounceY {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(4px); }
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .projects-content {
+    padding: 1.5rem;
+  }
+  .projects-title {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  .project-card {
+    width: 92vw;
+    height: auto;
+    min-height: 60vh;
+    padding: 0;
+  }
+  .project-card > div {
+    flex-direction: column !important;
+    padding: 2rem !important;
+  }
+  .project-card > div > div:first-child {
+    padding-right: 0 !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem;
+  }
+  .project-card h3 {
+    font-size: 1.8rem !important;
+  }
+  .project-card p {
+    font-size: 1rem !important;
+  }
+  .project-card > div > div:last-child {
+    width: 100%;
+    height: 250px;
+  }
+  .scroll-hint {
+    right: 0.5rem;
+    top: 0.5rem;
+  }
+  .scroll-hint-text {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .scroll-hint-arrow {
+    width: 100px;
+    height: 70px;
+  }
+  .exit-hint {
+    bottom: 1.5rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  .ppp {
+    font-size: calc(1.2rem + 1vw);
+    bottom: 1.5rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .projects {
+    height: auto;
+    min-height: 100vh;
+  }
+  .projects-content {
+    padding: 1rem;
+  }
+  .projects-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+  }
+  .scroll-stack-container {
+    top: -40px;
+  }
+  .project-card {
+    width: 95vw;
+    height: auto;
+    min-height: 70vh;
+  }
+  .project-card > div {
+    padding: 1.5rem !important;
+    border-radius: 12px !important;
+  }
+  .project-card > div > div:first-child {
+    margin-bottom: 1rem;
+  }
+  .project-card h3 {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  .project-card p {
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.5;
+  }
+  .category-tag {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.75rem !important;
+  }
+  .project-card > div > div:last-child {
+    height: 200px;
+  }
+  .project-card img {
+    border-radius: 10px !important;
+  }
+  .scroll-hint {
+    display: none;
+  }
+  .exit-hint {
+    bottom: 1rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+  .ppp {
+    font-size: calc(1rem + 1vw);
+    bottom: 1rem;
+  }
 }

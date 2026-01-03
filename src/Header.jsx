@@ -17,7 +17,7 @@ function Header({scroll,index,setIndex}) {
       <button className='buttons' style={{backgroundColor:index===1?'#9ef01a':'transparent'}} onClick={()=>scrollToSection('about', 1)}>ABOUT ME</button>
       <button className='buttons' style={{backgroundColor:index===2?'#9ef01a':'transparent'}} onClick={()=>scrollToSection('skills', 2)}>SKILLS</button> 
       <button className='buttons' style={{backgroundColor:index===3?'#9ef01a':'transparent'}} onClick={()=>scrollToSection('projects', 3)}>PROJECTS</button>
-      <button className='buttons' style={{backgroundColor:'#9ef01a'}} onClick={()=>{window.open('https://drive.google.com/uc?export=download&id=1iQDdHhhfRrtLukKiZU7DHvVrZVhYEaLE','_blank')}}>RESUME</button> 
+      <button className='buttons' style={{backgroundColor:'#9ef01a'}} onClick={()=>{window.open('https://drive.google.com/file/d/1iQDdHhhfRrtLukKiZU7DHvVrZVhYEaLE/view?usp=sharing')}}>RESUME</button> 
       </div>
       </div>
   

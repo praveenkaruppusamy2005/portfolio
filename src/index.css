@@ -61,6 +61,7 @@ html,body{
   padding: 0;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 *, *::before, *::after {
@@ -70,6 +71,26 @@ html,body{
 #root {
   min-height: 100%;
   width: 100%;
+  overflow-x: hidden;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 14px;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  body {
+    position: relative;
+    overflow-x: hidden;
+  }
 }
 
 @theme inline {

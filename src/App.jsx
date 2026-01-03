@@ -9,25 +9,46 @@ import Skills from './Skills'
 function App() {
 
   const[scroll,onScroll]=useState(false);
+  
   useEffect(()=>{
+    let ticking = false;
+    
     const scrolled=()=>{
-      if(window.scrollY>10){
-        onScroll(true);
-      }
-      else{
-        onScroll(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+          console.log('🔥 Scroll detected! Position:', scrollPosition);
+          
+          if(scrollPosition > 50){
+            onScroll(true);
+          }
+          else{
+            onScroll(false);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     }
-    window.addEventListener('scroll',scrolled);
+    
+    // Initial check
+    scrolled();
+    
+    window.addEventListener('scroll', scrolled, { passive: true });
+    
     return ()=>{
-      window.removeEventListener('scroll',scrolled);
+      window.removeEventListener('scroll', scrolled);
     }
   },[])
+  
   const[index,setIndex]=useState(0);
+
+  console.log('Current scroll state:', scroll);
 
   return (
     <div style={{minHeight:'100vh',width:'100%',display:'flex',flexDirection:'column'}}>
       <Header scroll={scroll} index={index} setIndex={setIndex} />
+
 
       <div style={{width:'100%',margin:'0 auto'}}>
         <Hero/>

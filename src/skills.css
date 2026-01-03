@@ -247,12 +247,98 @@
   opacity: 0.6;
 }
 
+/* Tablet and below */
 @media (max-width: 900px) {
   .skills-content {
     flex-direction: column;
+    width: 98%;
   }
   .skills-left {
     min-height: 320px;
+    flex: 1;
+    margin-left: 0;
+  }
+  .collage {
+    height: 480px;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 15px;
+  }
+  .group-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .skills {
+    padding: 0 10px;
+  }
+  .skills-content {
+    top: 60px;
+    gap: 15px;
+  }
+  .skills-left {
+    min-height: 280px;
+    padding: 5px;
+  }
+  .collage {
+    height: 400px;
+  }
+  .tool-tile {
+    padding: 8px 10px;
+    border-radius: 16px;
+  }
+  .logo-circle {
+    width: clamp(36px, 8vw, 60px) !important;
+    height: clamp(36px, 8vw, 60px) !important;
+  }
+  .tool-tile.large .logo-circle {
+    width: clamp(60px, 12vw, 100px) !important;
+    height: clamp(60px, 12vw, 100px) !important;
+  }
+  .tile-label {
+    font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+    margin-left: 8px;
+  }
+  .toggle {
+    margin: 40px auto 20px;
+    padding: 3px;
+    gap: 4px;
+  }
+  .toggle button {
+    padding: 6px 16px;
+    font-size: 0.9rem;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+  }
+  .skill-card {
+    padding: 10px 8px;
+    border-radius: 12px;
+  }
+  .skill-card img {
+    height: 42px;
+    margin-bottom: 8px;
+  }
+  .skill-card p {
+    font-size: 0.85rem;
+  }
+  .group-title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .group-grid {
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+    gap: 12px;
+  }
+  .skills-title {
+    margin-top: 60px;
+    font-size: 1.8rem;
   }
 }
 
@@ -284,3 +370,4 @@
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
 }
+

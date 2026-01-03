@@ -193,19 +193,104 @@
   flex-shrink: 0;
 }
 
+/* Tablet and below */
 @media (max-width: 768px) {
   .hero-title {
     font-size: clamp(2.8rem, 12vw, 6rem);
+  }
+  .hero-subtitle {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    margin-left: 5%;
+  }
+  .social_div {
+    margin-left: 5%;
+    gap: 15px;
+  }
+  .social_icons {
+    gap: 15px;
+  }
+  .buttonsocial {
+    height: 50px;
+    width: 50px;
+  }
+  .social-icon {
+    width: 28px;
+    height: 28px;
   }
   .lanyard-wrapper {
     top: -100px;
   }
   .lanyard-strap {
     height: 160px;
+    width: 40px;
   }
   .lanyard-card {
-    width: 140px;
-    height: 220px;
+    width: 200px;
+    height: 300px;
+    padding: 20px;
+  }
+  .lanyard-text h3 {
+    font-size: 22px;
+  }
+  .lanyard-role {
+    font-size: 12px;
   }
 }
 
+/* Mobile devices */
+@media (max-width: 480px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 4rem);
+    white-space: normal;
+    word-break: break-word;
+  }
+  .hero-subtitle {
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .social_div {
+    margin-left: 5%;
+    margin-right: 5%;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .social_icons {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .buttonsocial {
+    height: 45px;
+    width: 45px;
+  }
+  .social-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .lanyard-wrapper {
+    top: -80px;
+    transform: translateX(-50%) scale(0.8);
+  }
+  .lanyard-strap {
+    height: 120px;
+    width: 35px;
+  }
+  .lanyard-card {
+    width: 160px;
+    height: 240px;
+    padding: 15px;
+    border: 8px solid #000;
+  }
+  .lanyard-text h3 {
+    font-size: 18px;
+  }
+  .lanyard-role {
+    font-size: 10px;
+  }
+}

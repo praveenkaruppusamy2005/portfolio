@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import ScrollStack, { ScrollStackItem } from './component/ScrollStack';
 import './projects.css';
@@ -62,13 +63,6 @@ export default function Projects() {
         <h2 className="projects-title">Projects</h2>
         
         <div className="scroll-stack-container">
-            <div className="scroll-hint">
-              <span className="scroll-hint-text">Scroll here for Projects</span>
-              <svg className="scroll-hint-arrow" width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M115,10 C85,10 75,20 65,30 C55,40 45,50 25,52 C18,53 12,52 5,50" fill="none" stroke="#9ef01a" stroke-width="4" stroke-linecap="round"/>
-                <path d="M12,58 L4,50 L12,42" fill="none" stroke="#9ef01a" stroke-width="4" stroke-linecap="round"/>
-              </svg>
-            </div>
             <ScrollStack
                 itemDistance={100} // Standard distance
                 itemScale={0} // No scaling, all cards same size
@@ -115,7 +109,7 @@ export default function Projects() {
         {endVisible && (
           <div className="exit-hint">
             <svg className="exit-hint-arrow" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 5v14M5 12l7 7 7-7" fill="none" stroke="#9ef01a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 5v14M5 12l7 7 7-7" fill="none" stroke="#9ef01a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <span>Scroll out to next sections</span>
           </div>

@@ -43,3 +43,42 @@
   50% { transform: scale(1.18); }
   100% { transform: scale(1); }
 }
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .signature-footer {
+    padding: 1.5rem 0.8rem;
+  }
+  .signature-card {
+    padding: 1rem 1.5rem;
+    width: 98%;
+    border-radius: 12px;
+  }
+  .signature-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  .signature-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .signature-footer {
+    padding: 1.2rem 0.5rem;
+  }
+  .signature-card {
+    padding: 0.8rem 1rem;
+    width: 98%;
+    border-radius: 10px;
+  }
+  .signature-title {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  .signature-text {
+    font-size: 0.85rem;
+    letter-spacing: 0.2px;
+  }
+}
