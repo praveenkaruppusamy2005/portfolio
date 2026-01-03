@@ -1,0 +1,43 @@
+.about {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #a3ff12;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 40px;
+    cursor: url('https://img.icons8.com/material-rounded/24/blue-pointer.png')  12 12, pointer;
+    flex-direction: column;
+}
+
+
+
+.about-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 600;
+}
+.about-des {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    max-width: 800px;
+    line-height: 1.6;
+    font-weight: 400;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .about {
+        flex-direction: column;
+        text-align: left;
+    }
+    .about-desc {
+        text-align: left;
+    }
+}

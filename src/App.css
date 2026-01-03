@@ -1,0 +1,45 @@
+/* Signature footer styles */
+.signature-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background: #ffffff;
+}
+
+.signature-card {
+  border-radius: 16px;
+  padding: 1.25rem 2rem;
+  max-width: 900px;
+  width: 95%;
+  text-align: center;
+  color: #000000;
+}
+
+.signature-title {
+  color: #000000;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.signature-text {
+  color: #000000;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+}
+
+.signature-heart {
+  display: inline-block;
+  color: #ff3b3b;
+  animation: heartPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
