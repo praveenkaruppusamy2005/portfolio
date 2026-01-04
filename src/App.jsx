@@ -51,10 +51,21 @@ function App() {
 
 
       <div style={{width:'100%',margin:'0 auto'}}>
-        <Hero/>
-        <About/>
-        <Skills/>
-        <Projects/>
+        <div id="home">
+          <Hero/>
+        </div>
+        <div id="about">
+          <About/>
+        </div>
+        <div id="skills">
+          <Skills/>
+        </div>
+        <div id="projects">
+          <Projects/>
+        </div>
+        <div className="never-ends-section">
+          <h2 className="never-ends-text">IT NEVER ENDS HERE</h2>
+        </div>
         <footer className="signature-footer">
         <div className="signature-card">
           <div className="signature-title">Thanks for visiting my portfolio</div>

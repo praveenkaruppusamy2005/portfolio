@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: url('./assets/icons8-select-cursor-24.png') 12 12, pointer;
 }
 
 .hero-content {
@@ -62,7 +63,7 @@
 .lanyard-card {
   width: 280px;
   height: 420px;
-  background: linear-gradient(180deg, #a3ff12, #5fd600);
+  background: linear-gradient(180deg, #a3ff12, #c5ff5e);
   border-radius: 40px;
   margin-top: -20px; /* Tuck under the clip */
   padding: 30px;
