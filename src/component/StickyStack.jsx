@@ -43,8 +43,7 @@ const StickyStack = ({ children, className = '', onStackComplete }) => {
           const isMobile = vw <= 480
           const isTablet = vw > 480 && vw <= 900
           const base = isMobile ? 120 : isTablet ? 140 : 160
-          const step = isMobile ? 14 : isTablet ? 16 : 16
-          const topOffset = `calc(-2vh + ${i * step + base}px)`
+          const topOffset = `calc(-2vh + ${base}px)`
           return (
             <div className="sticky-card-wrapper">
               <div
@@ -52,7 +51,10 @@ const StickyStack = ({ children, className = '', onStackComplete }) => {
                 style={{
                   transform: `scale(${scale})`,
                   top: topOffset,
-                  zIndex: i === activeIndex ? 100 : 1
+                  zIndex: i === activeIndex ? 100 : 1,
+                  opacity: i === activeIndex ? 1 : 0,
+                  pointerEvents: i === activeIndex ? 'auto' : 'none',
+                  transition: 'opacity 200ms ease-out'
                 }}
               >
                 {child}
