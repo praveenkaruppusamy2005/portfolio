@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import ScrollStack, { ScrollStackItem } from './component/ScrollStack';
+import StickyStack, { StickyStackItem } from './component/StickyStack';
 import './projects.css';
 
 export default function Projects() {
@@ -63,48 +63,41 @@ export default function Projects() {
         <h2 className="projects-title">Projects</h2>
         
         <div className="scroll-stack-container">
-            <ScrollStack
-                itemDistance={100} // Standard distance
-                itemScale={0} // No scaling, all cards same size
-                itemStackDistance={0} // No offset, cards stack directly on top of each other
-                stackPosition="10%"
-                scaleEndPosition="5%"
-                baseScale={1} // Full size
-                scaleDuration={0.5}
-                rotationAmount={0}
-                blurAmount={0}
-                useWindowScroll={false}
+            <StickyStack
                 className="my-scroll-stack"
                 onStackComplete={(completed) => setEndVisible(completed)}
             >
                 {filteredProjects.map((project) => (
-                    <ScrollStackItem key={project.id} itemClassName="project-card">
+                    <StickyStackItem key={project.id} itemClassName="project-card">
                         <div style={{
                             width: '100%', 
-                            height: '100%', 
+                            height: 'auto', 
                             background: project.color, 
                             borderRadius: '15px',
                             display: 'flex',
                             flexDirection: 'row', 
-                            alignItems: 'center',
+                            alignItems: 'flex-start',
                             justifyContent: 'space-between',
                             padding: '3rem',
+                            gap: '2.5rem',
                             color: '#000',
-                            overflow: 'hidden',
-                            position: 'relative' // Ensure relative positioning for absolute children if any
+                            overflow: 'visible',
+                            position: 'relative'
                         }}>
-                           <div style={{ flex: 1, paddingRight: '2rem', textAlign: 'left' }}>
+                           <div style={{ flex: 1.35, paddingRight: '2.5rem', textAlign: 'left' }}>
                                 <h3 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem', fontFamily: 'DM Sans, sans-serif' }}>{project.title}</h3>
-                                <p style={{ fontSize: '1.2rem', color: '#333', marginBottom: '2rem', fontFamily: 'DM Sans, sans-serif' }}>{project.description}</p>
+                                <p style={{ fontSize: '1.4rem', lineHeight: '1.65', color: '#111', marginBottom: '2.2rem', fontFamily: 'DM Sans, sans-serif' }}>{project.description}</p>
                                 <span className="category-tag" style={{ background: '#4CAF50', color: 'white', padding: '0.5rem 1rem', borderRadius: '20px', fontSize: '0.9rem' }}>{project.category}</span>
                            </div>
-                           <div style={{ flex: 1, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <img src={project.image} alt={project.title} style={{ maxWidth: '100%', maxHeight: '100%', borderRadius: '15px', objectFit: 'cover'}} />
+                           <div style={{ flex: 0.5, height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <img loading="lazy" src={project.image} alt={project.title} style={{ maxWidth: '70%', maxHeight: '280px', borderRadius: '15px', objectFit: 'contain'}} />
                            </div>
                         </div>
-                    </ScrollStackItem>
+                    </StickyStackItem>
                 ))}
-            </ScrollStack>
+              
+            </StickyStack>
+
         </div>
         {endVisible && (
           <div className="exit-hint">

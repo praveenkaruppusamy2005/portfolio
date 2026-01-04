@@ -3,11 +3,11 @@
   width: 100vw;
   height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background-color: #a3ff12;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
 }
 .ppp{
   font-family: 'DM Sans', sans-serif;
@@ -30,7 +30,7 @@
   box-sizing: border-box;
   color: #000;
   position: relative;
-  top:100px
+  top:40px
   /* top: 80px; Removed to fix alignment */
 }
 
@@ -66,14 +66,24 @@
   flex: 1;
   width: 100%;
   position: relative;
-  overflow: hidden; 
-  top: -60px;
+  overflow: visible; 
+  top: -200px;
+}
+
+/* Native list replacing ScrollStack */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  align-items: center;
+  padding-top: 0.1rem;
 }
 
 .scroll-hint {
   position: absolute;
   right: 1rem;
-  top: 1rem;
+  top: 0.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -99,13 +109,15 @@
 
 .my-scroll-stack {
   width: 100vw;
-  height: 100%;
+  height: 95vh;
   overflow-y: auto; 
 }
+ 
 
 .project-card {
-  width: 90vw;
-  height: 65vh;
+  width: 92vw;
+  height: auto;
+  min-height: 85vh;
   max-width: 1200px;
   background: transparent;
   padding: 0;
@@ -118,6 +130,10 @@
   margin: 0 auto;
 }
 
+.my-scroll-stack .scroll-stack-card {
+  box-shadow: none !important;
+}
+
 .project-card h3 {
   margin-bottom: 1rem;
   font-size: 2rem;
@@ -125,9 +141,10 @@
 }
 
 .project-card p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   font-size: 1.2rem;
   color: #000;
+  line-height: 1.7;
 }
 
 .category-tag {
@@ -165,6 +182,53 @@
   50% { transform: translateY(4px); }
 }
 
+.never-ends-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  color: #000;
+  text-align: center;
+  margin: 4rem auto;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.never-ends-subtext {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 2.8vw, 1.4rem);
+  color: #000;
+  text-align: center;
+  margin: -2rem auto 2.5rem;
+  opacity: 0.9;
+  max-width: 900px;
+}
+
+.end-card-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  margin-bottom: 0.5rem;
+}
+.end-card-subtext {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  opacity: 0.9;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Tablet and below */
 @media (max-width: 768px) {
   .projects-content {
@@ -174,11 +238,18 @@
     font-size: 2rem;
     margin-bottom: 0.8rem;
   }
+  .project-card > div {
+    align-items: flex-start !important;
+  }
+}
   .project-card {
     width: 92vw;
     height: auto;
     min-height: 60vh;
     padding: 0;
+  }
+  .projects-list {
+    gap: 1.5rem;
   }
   .project-card > div {
     flex-direction: column !important;
@@ -220,7 +291,12 @@
     font-size: calc(1.2rem + 1vw);
     bottom: 1.5rem;
   }
-}
+  .never-ends-subtext {
+    font-size: clamp(0.95rem, 3vw, 1.2rem);
+    margin: -1.5rem auto 2rem;
+    padding: 0 1rem;
+  }
+
 
 /* Mobile devices */
 @media (max-width: 480px) {
@@ -237,6 +313,9 @@
   }
   .scroll-stack-container {
     top: -40px;
+  }
+  .projects-list {
+    gap: 1.2rem;
   }
   .project-card {
     width: 95vw;
@@ -280,5 +359,10 @@
   .ppp {
     font-size: calc(1rem + 1vw);
     bottom: 1rem;
+  }
+  .never-ends-subtext {
+    font-size: clamp(0.9rem, 3.2vw, 1.1rem);
+    margin: -1rem auto 1.5rem;
+    padding: 0 0.8rem;
   }
 }

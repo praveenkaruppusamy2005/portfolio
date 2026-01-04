@@ -239,15 +239,21 @@
 
 /* Mobile devices */
 @media (max-width: 480px) {
+  .hero-content {
+    text-align: left;
+  }
   .hero {
     height: auto;
     min-height: 100vh;
     padding: 20px 0;
   }
   .hero-title {
-    font-size: clamp(2rem, 10vw, 4rem);
+    font-size: clamp(2.4rem, 18vw, 5.5rem);
     white-space: normal;
     word-break: break-word;
+    text-align: left;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .hero-subtitle {
     font-size: clamp(1rem, 3.5vw, 1.5rem);
@@ -259,11 +265,12 @@
     margin-right: 5%;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .social_icons {
     gap: 10px;
     flex-wrap: wrap;
+    justify-content: flex-start;
   }
   .buttonsocial {
     height: 45px;

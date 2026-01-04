@@ -5,6 +5,7 @@ import './skills.css'
 
 const SKILLS_TILES = [
   { name: 'React', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', size: 'large' },
+  { name: 'React Native', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', size: 'large' },
   { name: 'Node.js', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
   { name: 'Express.js', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
   { name: 'MongoDB', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
@@ -32,8 +33,8 @@ export default function Skills() {
     'Node.js': '#E6F4EA',
     'Express.js': '#F0F2F5',
     'JavaScript': '#FFF6B0',
-    'React': '#E3F8FF',
     'Python': '#DDEBFF',
+    'React Native': '#E3F8FF',
     'Java': '#FFE4E1',
     'Electron': '#E6F3F7',
     'MongoDB': '#EAF8EA',

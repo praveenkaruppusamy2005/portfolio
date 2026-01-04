@@ -74,6 +74,13 @@ html,body{
   overflow-x: hidden;
 }
 
+/* Make media elements resize within their containers */
+img, picture, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Responsive improvements */
 @media (max-width: 768px) {
   :root {
